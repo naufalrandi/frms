@@ -10,7 +10,7 @@
       <h1>Edit User</h1>
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-        <div class="breadcrumb-item"><a href="#">Role</a></div>
+        <div class="breadcrumb-item"><a href="#">User</a></div>
         <div class="breadcrumb-item">Edit User</div>
       </div>
     </div>
@@ -65,8 +65,51 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Role:</strong>
-                            {!! Form::select('roles[]', $userRole,$userRole, array('class' => 'form-control','multiple')) !!}
+                            <strong>NIM:</strong>
+                            {!! Form::text('nim', null, array('placeholder' => 'nim','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Jenis Kelamin:</strong>
+                            <select class="form-control" name="jeniskelamin" >
+                                <option>Laki Laki</option>
+                                <option>Perempuan</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Tempat tanggal lahir:</strong>
+                            {!! Form::date('ttl', null, array('placeholder' => 'ttl','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Alamat:</strong>
+                            {!! Form::textarea('alamat', null, array('placeholder' => 'alamat','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Angkatan:</strong>
+                            {!! Form::text('angkatan', null, array('placeholder' => 'angkatan','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>No hp:</strong>
+                            {!! Form::text('nohp', null, array('placeholder' => 'nohp','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Level :</strong>
+                            <select class="form-control" name="is_admin" >
+                                <option>0</option>
+                                <option>1</option>
+                            </select>
+                            <label>Note : 0 = User, 1 = Admin</label>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

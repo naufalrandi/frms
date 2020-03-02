@@ -10,7 +10,7 @@
       <h1>Create New User</h1>
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-        <div class="breadcrumb-item"><a href="#">Role</a></div>
+        <div class="breadcrumb-item"><a href="#">User</a></div>
         <div class="breadcrumb-item">Create New User</div>
       </div>
     </div>

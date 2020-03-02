@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Datatables;
 
 
 class UserController extends Controller
@@ -97,9 +98,32 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        User::find($id)->delete();
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email'.$id,
+            'password' => 'required|same:confirm-password',
+            'is_admin' => 'required',
+            'nim' => 'required',
+            'jeniskelamin' => 'required',
+            'ttl' => 'required',
+            'alamat' => 'required',
+            'angkatan' => 'required',
+            'nohp' => 'required',
+        ]);
+
+        $input = $request->all();
+        if (!empty($input['password'])) {
+            $input['password'] = Hash::make($input['password']);
+        }
+        else {
+            $input = array_except($input,array('password'));
+        }
+
+        $user = User::find($id);
+        $user->update($input);
+
         return redirect()->route('users.index')
-            ->with('success', 'User Deleted');
+            ->with('success','User updated');
     }
 
     /**
@@ -115,5 +139,11 @@ class UserController extends Controller
             ->with('success', 'User Deleted');
     }
 
+    public function usersList()
+    {
+        $users = DB::table('users')->select('*');
+        return datatables()->of($users)
+            ->make(true);
+    }
 
 }

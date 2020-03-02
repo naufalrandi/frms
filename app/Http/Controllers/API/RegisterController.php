@@ -32,6 +32,7 @@ class RegisterController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['is_admin'] = 1;
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
@@ -46,15 +47,39 @@ class RegisterController extends BaseController
      */
     public function login(Request $request)
     {
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')-> accessToken;
-            $success['name'] =  $user->name;
-
-            return $this->sendResponse($success, 'User login successfully.');
-        }
-        else{
-            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            $success['token'] = $user->createToken('appToken')->accessToken;
+           //After successfull authentication, notice how I return json parameters
+            return response()->json([
+              'success' => true,
+              'token' => $success,
+              'user' => $user
+          ]);
+        } else {
+       //if authentication is unsuccessfull, notice how I return json parameters
+          return response()->json([
+            'success' => false,
+            'message' => 'Invalid Email or Password',
+        ], 401);
         }
     }
+
+    public function logout(Request $request)
+    {
+      if (Auth::user()) {
+        $user = Auth::user()->token();
+        $user->revoke();
+
+        return response()->json([
+          'success' => true,
+          'message' => 'Logout successfully'
+      ]);
+      }else {
+        return response()->json([
+          'success' => false,
+          'message' => 'Unable to Logout'
+        ]);
+      }
+     }
 }

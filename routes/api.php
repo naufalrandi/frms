@@ -18,3 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('register', 'API\RegisterController@register');
 Route::post('login', 'API\RegisterController@login');
+
+Route::middleware('auth:api')->group( function () {
+    Route::get('dosens', 'API\DosenController@index');
+    Route::resource('users', 'API\UserController');
+    Route::get('alumni', 'API\AlumniController@index');
+    Route::get('semester', 'API\SemesterController@index');
+    Route::get('matakuliah', 'API\MatakuliahController@index');
+    Route::get('filemateri', 'API\FilemateriController@index');
+    Route::get('logout', 'API\RegisterController@login');
+});

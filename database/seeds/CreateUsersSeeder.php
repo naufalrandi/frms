@@ -15,7 +15,7 @@ class CreateUsersSeeder extends Seeder
         $user = [
             [
                'name'=>'Admin',
-               'email'=>'admin@example.com',
+               'email'=>'yuukazema@gmail.com',
                 'is_admin'=>'1',
                'password'=> bcrypt('123456'),
             ],

@@ -35,7 +35,7 @@ class RegisterController extends BaseController
         $input['is_admin'] = 1;
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
-        $success['name'] =  $user->name;
+        $success['user'] =  $user;
 
         return $this->sendResponse($success, 'User register successfully.');
     }

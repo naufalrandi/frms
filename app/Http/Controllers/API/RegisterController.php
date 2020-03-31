@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,10 +13,10 @@ class RegisterController extends BaseController
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|unique',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'c_password' => 'required|same:password',
-            'nim' => 'required',
+            'nim' => 'required|unique:users',
             'jeniskelamin' => 'required',
             'ttl' => 'required',
             'alamat' => 'required',
@@ -27,7 +26,8 @@ class RegisterController extends BaseController
         ]);
 
         if($validator->fails()){
-            return redirect()->back()->withErrors($validator)->withInput();
+            // return redirect()->back()->withErrors($validator)->withInput();
+            return $this->sendError('Validation Error.', $validator->errors());
         }
 
         $input = $request->all();

@@ -1,0 +1,714 @@
+{
+	"info": {
+		"_postman_id": "5df91202-e3f4-4c22-86f1-ea406f75b055",
+		"name": "test api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "naufal",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "yuukazema@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_admin",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nim",
+									"value": "l1921912921",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jeniskelamin",
+									"value": "laki",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ttl",
+									"value": "feb",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nohp",
+									"value": "0909128031",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "alamat",
+									"value": "bgr",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "angkatan",
+									"value": "19",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Authorization",
+									"value": "Ou6eskADVF0eRZ8u5hnfbsDEuRue5EjA3SqHM9bl",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "naufal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "naufala1@user.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "is_admin",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nim",
+									"value": "l1921912921a",
+									"type": "text"
+								},
+								{
+									"key": "jeniskelamin",
+									"value": "laki",
+									"type": "text"
+								},
+								{
+									"key": "ttl",
+									"value": "feb",
+									"type": "text"
+								},
+								{
+									"key": "nohp",
+									"value": "0909128031",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "bgr",
+									"type": "text"
+								},
+								{
+									"key": "angkatan",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Authorization",
+									"value": "Ou6eskADVF0eRZ8u5hnfbsDEuRue5EjA3SqHM9bl",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "naufal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "naufal1@user.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "is_admin",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nim",
+									"value": "l1921912921",
+									"type": "text"
+								},
+								{
+									"key": "jeniskelamin",
+									"value": "laki",
+									"type": "text"
+								},
+								{
+									"key": "ttl",
+									"value": "feb",
+									"type": "text"
+								},
+								{
+									"key": "nohp",
+									"value": "0909128031",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "bgr",
+									"type": "text"
+								},
+								{
+									"key": "angkatan",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Authorization",
+									"value": "Ou6eskADVF0eRZ8u5hnfbsDEuRue5EjA3SqHM9bl",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Semester",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZhMGU1NDUwM2ExMTE2ZDg2N2RiOTU1NzBjMGVmYjgwOTllZGVjOGZiMWRlZDgzOWEwMmJhZTFlYzFmNjRhNDIxMGNlNDcxNjQ5MmNiNDciLCJpYXQiOjE1ODMwNTc2MzksIm5iZiI6MTU4MzA1NzYzOSwiZXhwIjoxNjE0NTkzNjM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.DXTnxhTTm4VSuj5AseRNYl6oSBQqYlJhOwiRnfYy9_ks-ilJDYKZPk8ipn1bxiYwe6WWeWy0YTDqVKK6Xpnvwwo-AK7XY9SortS3nbaMiYenkOdG2bpl1Z0l_EtOfhO07Ai7YbTGQ1KZ7cI4VN3szb1HZ5JofsCo06PpcvFYGdKZBRz4B17GS3UqndQEgg5MOgRTEYBLD13idBGoQPnCFS9Pjn9eB9ZHSavZRUMpzXcFuz10jhooXJ-qeOdqJiuvTVQqF5dVeEgg193gUSCaVVbuK-h0wz5AuqhYk4CJWVCbJ1hKBRkdLWjjSAcyybcgUaq9lMiN484xP9MGaQ5K8bS3GkJdW10GEUzHpzSCrIPjIvK6f1f2szrnP0NLrQBmxm2POv_RMY2lryBTSitny861HmhBgDAfTVKJnV9pxplWSbxm2wE1B3krYLchjJ59qHgrBCVmzimQB7wxc-cU0tdvb5bki7auuQldyYFlVwlHW1t7sWijgTvVdNANOHb_NJDupX45xlXmW3K6wCYP_ieC1ja8Hqav7KedCQb6zbx4hjwl7Gzw1b0csQx7TikOxC2HZOyRApwQRvsxTYERwXV7GDaslTzBQiIkvE8noa8e3YtbRPM2tZ6gwidy2Em8LV37XdqsCxuguRkPh-tUOxDMk06xmJMapW5Rnjm0GLk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/semester",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"semester"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mahasiswa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTc3YTNmOTFiYTJlNTNiMDlmODA2ODg4NDRiZjU3ZDA0Zjk2MGY3Yjg3MDRjYzgwZGVlMDU4ZTQ3ZjI4YmQzMDY4NDg4N2RiNzEyOTBlMGYiLCJpYXQiOjE1ODMwNTY3NTYsIm5iZiI6MTU4MzA1Njc1NiwiZXhwIjoxNjE0NTkyNzU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Itu70V45CFu0Rx06CwvXeiOa1_kHEVKgGpFNHWv7YAXu8jj5gPWHnaWSG2uc_lOPTnqiDgyvjGLGfCH-8eNyUvCOfUdTb-rNcvBiN1uH4Fku7KJfcUMwJtCdyqUGWBguTJnA-JtGmc5PynT2iR6JR2a0HDbZaMg3dp5BU3YlKTMg1u1HPIu1qciIn0DHI2OF_r1SNd2sWP2wHuyktWbvR8zeoJLadazsYRjxVWjilRRj1Rvj3qkB6OPapFxdqds32pTSGvUkkLCIZBKhLYQw9zrEoDYrtAJjyHHIwOjlI37_U4zi0Q5qVZGmiFy4yFINzeS-Cm2TgV1hSTbv4_7W5ID_mNTNePWt5Aaz2y0iVRunNGKd8h9oX9SXOywh94JFvvTc__W452Ycu2UTJ5Cm0wovS8dXwRdbc_t1np0aiUyX2hVlN7vSvqENcaxxeVmulRGXHqRaxA4WodIitDTpk5ovxoHp1VyGq9xRBupsO-2YbCJdC5XmdRlys9arBqNyv2IaqV8-nyUtG7K8Y06X5R25QRZ6wb1chM0PnZPC0SSWqbmfDo5HTL4l4lZ1ZO1TXu295ReG14R8iEABtzOIGiUv21-bUtbLLHNXAzEbTCZzb8O2yBF7EA8UdjhmGBXk__a6tz7r0tpAP0UZArLPq_MVi_SOiGhsWpayrrGaX34",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Matakuliah",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZhMGU1NDUwM2ExMTE2ZDg2N2RiOTU1NzBjMGVmYjgwOTllZGVjOGZiMWRlZDgzOWEwMmJhZTFlYzFmNjRhNDIxMGNlNDcxNjQ5MmNiNDciLCJpYXQiOjE1ODMwNTc2MzksIm5iZiI6MTU4MzA1NzYzOSwiZXhwIjoxNjE0NTkzNjM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.DXTnxhTTm4VSuj5AseRNYl6oSBQqYlJhOwiRnfYy9_ks-ilJDYKZPk8ipn1bxiYwe6WWeWy0YTDqVKK6Xpnvwwo-AK7XY9SortS3nbaMiYenkOdG2bpl1Z0l_EtOfhO07Ai7YbTGQ1KZ7cI4VN3szb1HZ5JofsCo06PpcvFYGdKZBRz4B17GS3UqndQEgg5MOgRTEYBLD13idBGoQPnCFS9Pjn9eB9ZHSavZRUMpzXcFuz10jhooXJ-qeOdqJiuvTVQqF5dVeEgg193gUSCaVVbuK-h0wz5AuqhYk4CJWVCbJ1hKBRkdLWjjSAcyybcgUaq9lMiN484xP9MGaQ5K8bS3GkJdW10GEUzHpzSCrIPjIvK6f1f2szrnP0NLrQBmxm2POv_RMY2lryBTSitny861HmhBgDAfTVKJnV9pxplWSbxm2wE1B3krYLchjJ59qHgrBCVmzimQB7wxc-cU0tdvb5bki7auuQldyYFlVwlHW1t7sWijgTvVdNANOHb_NJDupX45xlXmW3K6wCYP_ieC1ja8Hqav7KedCQb6zbx4hjwl7Gzw1b0csQx7TikOxC2HZOyRApwQRvsxTYERwXV7GDaslTzBQiIkvE8noa8e3YtbRPM2tZ6gwidy2Em8LV37XdqsCxuguRkPh-tUOxDMk06xmJMapW5Rnjm0GLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matakuliah",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matakuliah"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filemateri",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZhMGU1NDUwM2ExMTE2ZDg2N2RiOTU1NzBjMGVmYjgwOTllZGVjOGZiMWRlZDgzOWEwMmJhZTFlYzFmNjRhNDIxMGNlNDcxNjQ5MmNiNDciLCJpYXQiOjE1ODMwNTc2MzksIm5iZiI6MTU4MzA1NzYzOSwiZXhwIjoxNjE0NTkzNjM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.DXTnxhTTm4VSuj5AseRNYl6oSBQqYlJhOwiRnfYy9_ks-ilJDYKZPk8ipn1bxiYwe6WWeWy0YTDqVKK6Xpnvwwo-AK7XY9SortS3nbaMiYenkOdG2bpl1Z0l_EtOfhO07Ai7YbTGQ1KZ7cI4VN3szb1HZ5JofsCo06PpcvFYGdKZBRz4B17GS3UqndQEgg5MOgRTEYBLD13idBGoQPnCFS9Pjn9eB9ZHSavZRUMpzXcFuz10jhooXJ-qeOdqJiuvTVQqF5dVeEgg193gUSCaVVbuK-h0wz5AuqhYk4CJWVCbJ1hKBRkdLWjjSAcyybcgUaq9lMiN484xP9MGaQ5K8bS3GkJdW10GEUzHpzSCrIPjIvK6f1f2szrnP0NLrQBmxm2POv_RMY2lryBTSitny861HmhBgDAfTVKJnV9pxplWSbxm2wE1B3krYLchjJ59qHgrBCVmzimQB7wxc-cU0tdvb5bki7auuQldyYFlVwlHW1t7sWijgTvVdNANOHb_NJDupX45xlXmW3K6wCYP_ieC1ja8Hqav7KedCQb6zbx4hjwl7Gzw1b0csQx7TikOxC2HZOyRApwQRvsxTYERwXV7GDaslTzBQiIkvE8noa8e3YtbRPM2tZ6gwidy2Em8LV37XdqsCxuguRkPh-tUOxDMk06xmJMapW5Rnjm0GLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/matakuliah",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"matakuliah"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dosen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjA4MzY1OTY3NWJmNGYyOTYwZWE1ZmJiMzc5Yjg2MDg2ZmQ5M2Q5MTM3YjlmOWJkMzMzMDM0MzkyYjU2Y2JlMTQ0MzM3MGRiYTY0MzkwZjEiLCJpYXQiOjE1ODMwNjUwNTYsIm5iZiI6MTU4MzA2NTA1NiwiZXhwIjoxNjE0NjAxMDU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VzBqSHGEmUerdF7b3ZUQ0cHJueDjsDpzuv_yZFmsyU4gME2qRDs5Sb-4IPdO3OLqnZp_5THhGi1xpwDfpqW8Iu2R28xUf2L_cCSteds0TKOm1T1ohwvVko__0Z-CZID84TmMcVAZZ-kK_Wp1HIBJaYywmb_7xH18n2qtxL8d7Zdr9aQptJmngsKZmzAFahdC2pO2Qeq_yocdHNot2BVFdg2CHo_pdsxY93iMeuk8KfKsIUYLf6IYu4IJuyZ-sl6NxhQsPPyVA24do3QUrgiIGVKQklv6eWp_Z14QEo6o7L5pySBn_Qh_FjePFltjna5aOW3zqDp4LOYmQAdpdpQcCabKOol_DS4oLEE2K2heS76wdEVMwGTdAGmxyxvwek4vLF71I-nCKudRB73tf2xcNrplxf68ves1CcVt1IvwjQReLLzUkMxKp5Jjq4iFS2jWuLSOoaUfY0AL7dyiRUHtSngmw6CKzEeNGzaZ3pCmSCgEd077gSwpiH8VgFqFZViHM2lKJo_ot-k0cYnbDebYRtQqOKxtvswb0QXBVd7RhkS1zOWlJp6M5GGiGnfNjLI16_BOS1FkzHjJWICWtI93yv7gyjgo_kG0XmVcK6Q8VSACjDsoRUs7wLb--T_nN9JZiDRg3jg9AlFyj9XsrQHvLzNOX_jS23rBAurQoOTrPcM"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dosens",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dosens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alumni",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZhMGU1NDUwM2ExMTE2ZDg2N2RiOTU1NzBjMGVmYjgwOTllZGVjOGZiMWRlZDgzOWEwMmJhZTFlYzFmNjRhNDIxMGNlNDcxNjQ5MmNiNDciLCJpYXQiOjE1ODMwNTc2MzksIm5iZiI6MTU4MzA1NzYzOSwiZXhwIjoxNjE0NTkzNjM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.DXTnxhTTm4VSuj5AseRNYl6oSBQqYlJhOwiRnfYy9_ks-ilJDYKZPk8ipn1bxiYwe6WWeWy0YTDqVKK6Xpnvwwo-AK7XY9SortS3nbaMiYenkOdG2bpl1Z0l_EtOfhO07Ai7YbTGQ1KZ7cI4VN3szb1HZ5JofsCo06PpcvFYGdKZBRz4B17GS3UqndQEgg5MOgRTEYBLD13idBGoQPnCFS9Pjn9eB9ZHSavZRUMpzXcFuz10jhooXJ-qeOdqJiuvTVQqF5dVeEgg193gUSCaVVbuK-h0wz5AuqhYk4CJWVCbJ1hKBRkdLWjjSAcyybcgUaq9lMiN484xP9MGaQ5K8bS3GkJdW10GEUzHpzSCrIPjIvK6f1f2szrnP0NLrQBmxm2POv_RMY2lryBTSitny861HmhBgDAfTVKJnV9pxplWSbxm2wE1B3krYLchjJ59qHgrBCVmzimQB7wxc-cU0tdvb5bki7auuQldyYFlVwlHW1t7sWijgTvVdNANOHb_NJDupX45xlXmW3K6wCYP_ieC1ja8Hqav7KedCQb6zbx4hjwl7Gzw1b0csQx7TikOxC2HZOyRApwQRvsxTYERwXV7GDaslTzBQiIkvE8noa8e3YtbRPM2tZ6gwidy2Em8LV37XdqsCxuguRkPh-tUOxDMk06xmJMapW5Rnjm0GLk"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumni",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZhMGU1NDUwM2ExMTE2ZDg2N2RiOTU1NzBjMGVmYjgwOTllZGVjOGZiMWRlZDgzOWEwMmJhZTFlYzFmNjRhNDIxMGNlNDcxNjQ5MmNiNDciLCJpYXQiOjE1ODMwNTc2MzksIm5iZiI6MTU4MzA1NzYzOSwiZXhwIjoxNjE0NTkzNjM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.DXTnxhTTm4VSuj5AseRNYl6oSBQqYlJhOwiRnfYy9_ks-ilJDYKZPk8ipn1bxiYwe6WWeWy0YTDqVKK6Xpnvwwo-AK7XY9SortS3nbaMiYenkOdG2bpl1Z0l_EtOfhO07Ai7YbTGQ1KZ7cI4VN3szb1HZ5JofsCo06PpcvFYGdKZBRz4B17GS3UqndQEgg5MOgRTEYBLD13idBGoQPnCFS9Pjn9eB9ZHSavZRUMpzXcFuz10jhooXJ-qeOdqJiuvTVQqF5dVeEgg193gUSCaVVbuK-h0wz5AuqhYk4CJWVCbJ1hKBRkdLWjjSAcyybcgUaq9lMiN484xP9MGaQ5K8bS3GkJdW10GEUzHpzSCrIPjIvK6f1f2szrnP0NLrQBmxm2POv_RMY2lryBTSitny861HmhBgDAfTVKJnV9pxplWSbxm2wE1B3krYLchjJ59qHgrBCVmzimQB7wxc-cU0tdvb5bki7auuQldyYFlVwlHW1t7sWijgTvVdNANOHb_NJDupX45xlXmW3K6wCYP_ieC1ja8Hqav7KedCQb6zbx4hjwl7Gzw1b0csQx7TikOxC2HZOyRApwQRvsxTYERwXV7GDaslTzBQiIkvE8noa8e3YtbRPM2tZ6gwidy2Em8LV37XdqsCxuguRkPh-tUOxDMk06xmJMapW5Rnjm0GLk"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alumni",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alumni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aspirasi",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODJmMmZkYjA2NDM5YTA1OTE2ZjMyNDQxZjI5MjQxY2M2YjQwZWVmYTk5MDBhNmI2MjRiYjVkNjQ2ZDNjNTc0N2VlODllNjQ3Y2FjZjRhMTIiLCJpYXQiOjE1ODU1NzY0MDksIm5iZiI6MTU4NTU3NjQwOSwiZXhwIjoxNjE3MTEyNDA5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ci2i-93i7FLLS-AjfIPaV0QZdUctzHGzRVGBNpblJEMbcOuq9n-0aNSrKUFZ3QpS3hwkkVX0hJWMbMDhStsp2WRsht9OC60GChY06PMgqpRZP5R-VJBjcoCgd6oIxlWIsXxUwotj4-cippXj1QyBSV5KxTHtmE5bx1dIskH3O82kbIeQYz80LNGVQ80PN6s5QxYONaPATQ56extE7lRHSJT0GMZAf-vLZ35c5n38qSNCFjKMh8lUafcXBwoPxdLObXq3BsNBgRZ8Yx_ekqp_rtmMSkhdpvVlOeg_X4947VSNRA4f2e19Pjoop945VTbrGNGen4XkFxIckRy2IsJ8TDvDdnO8ROx-jsMDzfVgH23wblnMFUDLsiXDHxeqcKKAXYnuxmEeDHCP5ueGsJ_fKxLtE12w0zqI-TZ-gVs5mViMA-MMs7fe8JuqW3sCbrRkifUAnh6fEo9batuzMNyfkUrIZ2jziCbdyy6GP9OnlyQ92A8Fyj8qzj6KPJSPgGMrJWyuOoB4lF53cONKgUByj2XVwhpyYq760_AO5WhlHqybvaizPtxLvEVpXB_6FRS1ymsEPXxSfpKoWJvHppK6qMNJ88ULsfw64nwCe_tMldZR0MDvfF8aPWv73T3voJ_gajvgmA9QSPi52R5mScBjMzVBnmvrdzksyV2xHor0AiE"
+					},
+					{
+						"key": "aspirasi",
+						"value": "turunkan harga",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "aspirasi",
+							"value": "turunkan harga bbm ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/aspirasi",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"aspirasi"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

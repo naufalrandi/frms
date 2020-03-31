@@ -26,5 +26,7 @@ Route::middleware('auth:api')->group( function () {
     Route::get('semester', 'API\SemesterController@index');
     Route::get('matakuliah', 'API\MatakuliahController@index');
     Route::get('filemateri', 'API\FilemateriController@index');
+    Route::post('aspirasi', 'API\AspirasiController@store');
+    Route::get('mahasiswa', 'API\UserController@index');
     Route::get('logout', 'API\RegisterController@login');
 });

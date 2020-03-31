@@ -139,11 +139,18 @@ class UserController extends Controller
             ->with('success', 'User Deleted');
     }
 
-    public function usersList()
-    {
-        $users = DB::table('users')->select('*');
-        return datatables()->of($users)
-            ->make(true);
-    }
+    public function search(Request $request)
+	{
+        $search = User::when($request->q, function ($query) use ($request) {
+            $query->where('name', 'LIKE', "%{$request->q}%")
+                  ->orWhere('jeniskelamin', 'LIKE', "%{$request->q}%")
+                  ->orWhere('email', 'LIKE', "%{$request->q}%")
+                  ->orWhere('angkatan', 'LIKE', "%{$request->q}%")
+                  ->orWhere('alamat', 'LIKE', "%{$request->q}%")
+                  ->orWhere('nim', 'LIKE', "%{$request->q}%");
+            })->paginate(5);
+        return view('users.index', compact('search'));
+
+	}
 
 }

@@ -16,9 +16,8 @@ class FilemateriController extends BaseController
      */
     public function index()
     {
-        $filemateri = Filemateri::all();
-
-        return $this->sendResponse(FilemateriResource::collection($filemateri), 'File Materi retrieved successfully.');
+        $filemateri = Filemateri::paginate();
+        return response()->json($filemateri, 200);
     }
 
     /**

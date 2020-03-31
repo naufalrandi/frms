@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['is_admin']], function () {
     Route::get('admin/home', 'HomeController@adminHome')->name('admin.home');
     Route::resource('users', 'UserController');
+    Route::get('users/search', 'UserController@search');
     Route::resource('dosens', 'DosenController');
     Route::resource('alumni', 'AlumniController');
     Route::resource('aspirasi', 'AspirasiController');
@@ -33,7 +34,6 @@ Route::group(['middleware' => ['is_admin']], function () {
         'only' => ['index', 'create', 'store','destroy']
     ]);
     Route::resource('event', 'EventController');
-    Route::get('users-list', 'UserController@usersList');
 
     // Events
     Route::resource('event', 'EventController');

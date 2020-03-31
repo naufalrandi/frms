@@ -14,7 +14,7 @@ class RegisterController extends BaseController
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique',
             'password' => 'required',
             'c_password' => 'required|same:password',
             'nim' => 'required',
@@ -27,7 +27,7 @@ class RegisterController extends BaseController
         ]);
 
         if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $input = $request->all();

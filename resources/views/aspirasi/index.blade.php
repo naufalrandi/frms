@@ -89,35 +89,5 @@
         </div>
       </div>
     </section>
-    {{-- <script type="text/javascript">
-        $(document).ready( function () {
-     $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-      });
-  $('#laravel_datatable').DataTable({
-         processing: true,
-         serverSide: true,
-         ajax: {
-          url: "{{ url('users-list') }}",
-          type: 'GET',
-          data: function (d) {
-          d.start_date = $('#start_date').val();
-          d.end_date = $('#end_date').val();
-          }
-         },
-         columns: [
-                  { data: 'id', name: 'id' },
-                  { data: 'name', name: 'name' },
-                  { data: 'email', name: 'email' },
-                  { data: 'created_at', name: 'created_at' }
-               ]
-      });
-   });
 
-  $('#btnFiterSubmitSearch').click(function(){
-     $('#laravel_datatable').DataTable().draw(true);
-  });
-      </script> --}}
 @endsection

@@ -2,17 +2,6 @@
 
 
 @section('content')
-<!-- General CSS Files -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-<!-- CSS Libraries -->
-<link rel="stylesheet" href="../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="../node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
-
-<!-- Template CSS -->
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="../assets/css/components.css">
 
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
@@ -44,6 +33,16 @@
             <div class="card">
               <div class="card-header">
                 <h4>All Users</h4>
+                {{-- <div class="card-header-form">
+                    <form action="/users/search" method="GET">
+                      <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search" value="{{ old('search') }}">
+                        <div class="input-group-btn">
+                          <button class="btn btn-primary" type="submit" value="SEARCH"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div> --}}
               </div>
               <div class="card-body">
                   <table class="table table-striped" id="table-1">
@@ -120,96 +119,6 @@
         </div>
       </div>
     </section>
-    <script>
-        $(document).ready( function () {
-         $('#table-1').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ url('users-list') }}",
-                columns: [
-                         { data: 'id', name: 'id' },
-                         { data: 'name', name: 'name' },
-                         { data: 'email', name: 'email' },
-                         { data: 'created_at', name: 'created_at' }
-                      ]
-             });
-          });
-       </script>
-    <!-- General JS Scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
 
-  <!-- JS Libraies -->
-  <script src="../node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
-  <script src="../node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
-
-  <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
-
-  <!-- Page Specific JS File -->
-  <script src="../assets/js/page/modules-datatables.js"></script>
-
-    {{-- <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-            $('#user').DataTable();
-        } );
-    </script>
-    <script>
-        $(document).ready(function(){
-
-         load_data('');
-
-         function load_data(user_query = '')
-         {
-          var _token = $("input[name=_token]").val();
-          $.ajax({
-           url:"{{ route('user.action') }}",
-           method:"POST",
-           data:{user_query:user_query, _token:_token},
-           dataType:"json",
-           success:function(data)
-           {
-            var output = '';
-            if(data.length > 0)
-            {
-             for(var count = 0; count < data.length; count++)
-             {
-              output += '<tr>';
-              output += '<td>'+data[count].name+'</td>';
-              output += '<td>'+data[count].nim+'</td>';
-              output += '<td>'+data[count].ttl+'</td>';
-              output += '<td>'+data[count].alamat+'</td>';
-              output += '<td>'+data[count].angkatan+'</td>';
-              output += '<td>'+data[count].nohp+'</td>';
-              output += '<td>'+data[count].email+'</td>';
-              output += '<td>'+data[count].is_admin+'</td>';
-              output += '</tr>';
-             }
-            }
-            else
-            {
-             output += '<tr>';
-             output += '<td colspan="6">No Data Found</td>';
-             output += '</tr>';
-            }
-            $('tbody').html(output);
-           }
-          });
-         }
-
-         $('#search').click(function(){
-          var user_query = $('#user').val();
-          load_data(user_query);
-         });
-
-        });
-        </script> --}}
 
 @endsection

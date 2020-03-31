@@ -16,9 +16,8 @@ class SemesterController extends BaseController
      */
     public function index()
     {
-        $semester = Semester::all();
-
-        return $this->sendResponse(SemesterResource::collection($semester), 'Semester retrieved successfully.');
+        $semester = Semester::paginate();
+        return response()->json($semester, 200);
     }
 
     /**

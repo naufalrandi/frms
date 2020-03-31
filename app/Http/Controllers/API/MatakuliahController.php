@@ -17,9 +17,8 @@ class MatakuliahController extends BaseController
      */
     public function index()
     {
-        $matakuliah = Matakuliah::all();
-
-        return $this->sendResponse(MatakuliahResource::collection($matakuliah), 'Matakuliah retrieved successfully.');
+        $matakuliah = Matakuliah::paginate();
+        return response()->json($matakuliah, 200);
     }
 
     /**

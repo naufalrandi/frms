@@ -17,9 +17,8 @@ class UserController extends BaseController
      */
     public function index()
     {
-        $user = User::all();
-
-        return $this->sendResponse(UserResource::collection($user), 'User retrieved successfully.');
+        $user = User::paginate();
+        return response()->json($user, 200);
     }
 
     /**

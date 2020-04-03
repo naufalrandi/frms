@@ -28,5 +28,6 @@ Route::middleware('auth:api')->group( function () {
     Route::get('filemateri', 'API\FilemateriController@index');
     Route::post('aspirasi', 'API\AspirasiController@store');
     Route::get('mahasiswa', 'API\UserController@index');
+    Route::get('event', 'API\EventController@index');
     Route::get('logout', 'API\RegisterController@login');
 });

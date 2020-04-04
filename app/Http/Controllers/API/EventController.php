@@ -16,8 +16,9 @@ class EventController extends BaseController
      */
     public function index()
     {
-        $event = Event::paginate();
-        return response()->json($event, 200);
+        $events = Event::all();
+
+        return $this->sendResponse(EventResource::collection($events), 'Events retrieved successfully.');
     }
 
     /**

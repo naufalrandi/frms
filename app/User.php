@@ -22,21 +22,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'ttl','alamat','angkatan','nohp',
     ];
 
-    protected $searchable = [
-        'columns' => [
-            'full_text_searches.name'  => 10,
-            'full_text_searches.email'   => 10,
-            'full_text_searches.password'   => 10,
-            'full_text_searches.is_admin'    => 10,
-            'full_text_searches.nim'  => 10,
-            'full_text_searches.jeniskelamin'   => 10,
-            'full_text_searches.ttl'   => 10,
-            'full_text_searches.alamat'   => 10,
-            'full_text_searches.angkatan'   => 10,
-            'full_text_searches.nohp'   => 10,
-            'full_text_searches.id'    => 10,
-        ]
-    ];
 
     /**
      * The attributes that should be hidden for arrays.

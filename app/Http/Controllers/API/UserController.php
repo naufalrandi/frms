@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\User as UserResource;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends BaseController
@@ -17,8 +18,8 @@ class UserController extends BaseController
      */
     public function index()
     {
-        $user = User::paginate();
-        return response()->json($user, 200);
+        // $user = User::paginate();
+        // return response()->json($user, 200);
     }
 
     /**
@@ -26,17 +27,7 @@ class UserController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
@@ -48,9 +39,9 @@ class UserController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        $user = User::find($id);
+        $user = $request->user();
 
         if (is_null($user)) {
             return $this->sendError('user not found.');
@@ -68,37 +59,37 @@ class UserController extends BaseController
      */
     public function update(Request $request, User $user)
     {
-        $input = $request->all();
+        // dd($request->name);
+        // $input = $request->all();
+        $user = $request->user();
+        // dd($input);
 
-        $validator = Validator::make($input, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email'.$user,
-            'password' => 'required|same:confirm-password',
-            'is_admin' => 'required',
-            'nim' => 'required',
-            'jeniskelamin' => 'required',
-            'ttl' => 'required',
-            'alamat' => 'required',
-            'angkatan' => 'required',
-            'nohp' => 'required',
-        ]);
+        // $validator = Validator::make($input, [
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users,email'.$user,
+        //     'password' => 'required|same:confirm-password',
+        //     'nim' => 'required',
+        //     'jeniskelamin' => 'required',
+        //     'ttl' => 'required',
+        //     'alamat' => 'required',
+        //     'angkatan' => 'required',
+        //     'nohp' => 'required',
+        // ]);
 
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
+        // if($validator->fails()){
+        //     return $this->sendError('Validation Error.', $validator->errors());
+        // }
 
-        $user->name = $input['name'];
-        $user->email = $input['email'];
-        $user->password = $input['password'];
-        $user->email = $input['email'];
-        $user->is_admin = $input['is_admin'];
-        $user->nim = $input['nim'];
-        $user->jeniskelamin = $input['jeniskelamin'];
-        $user->ttl = $input['ttl'];
-        $user->angkatan = $input['angkatan'];
-        $user->nohp = $input['nohp'];
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->nim = $request->nim;
+        $user->jeniskelamin = $request->jeniskelamin;
+        $user->ttl = $request->ttl;
+        $user->angkatan = $request->angkatan;
+        $user->nohp = $request->nohp;
         $user->save();
-
+        // dd($user);
         return $this->sendResponse(new UserResource($user), 'User updated successfully.');
     }
 

@@ -1,6 +1,6 @@
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="">{{ env('APP_NAME') }}</a>
+      <a href="">Mafarmasi</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
       <a href="#">{{ strtoupper(substr(env('APP_NAME'), 0, 2)) }}</a>
@@ -16,6 +16,7 @@
       <li class="menu-header">Data</li>
       <li class="{{ request()->is('/alumni') ? 'active' : '' }}"><a class="nav-link" href="{{ route('alumni.index') }}"><i class="fa fa-graduation-cap"></i> <span>Alumni</span></a></li>
       <li class="{{ request()->is('/dosen') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dosens.index') }}"><i class="fa fa-address-card"></i> <span>Dosen</span></a></li>
+      <li class="{{ request()->is('/mahasiswa') ? 'active' : '' }}"><a class="nav-link" href="{{ route('mahasiswa.index') }}"><i class="fa fa-address-card"></i> <span>Mahasiswa</span></a></li>
       <li class="menu-header">Aspirasi</li>
       <li class="{{ request()->is('/aspirasi') ? 'active' : '' }}"><a class="nav-link" href="{{ route('aspirasi.index') }}"><i class="fa fa-comments"></i> <span>Aspirasi</span></a></li>
       <li class="menu-header">Users</li>

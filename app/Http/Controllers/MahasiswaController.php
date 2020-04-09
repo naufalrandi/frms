@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mahasiswa;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Datatables;
 
-
-class UserController extends Controller
+class MahasiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +15,8 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('users.index', compact('data'))
+        $data = Mahasiswa::orderBy('id', 'DESC')->paginate(5);
+        return view('mahasiswa.index', compact('data'))
             ->with('i', ($request->input('page', 1) -1) *5);
 
     }
@@ -32,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('mahasiswa.create');
     }
 
     /**
@@ -45,23 +41,18 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
-            'is_admin' => 'required',
             'nim' => 'required',
             'jeniskelamin' => 'required',
             'ttl' => 'required',
             'alamat' => 'required',
             'angkatan' => 'required',
-            'nohp' => 'required',
         ]);
         $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
 
-        $user = User::create($input);
+        Mahasiswa::create($input);
 
-        return redirect()->route('users.index')
-            ->with('success','User Created');
+        return redirect()->route('mahasiswa.index')
+            ->with('success','mahasiswa Created');
 
     }
 
@@ -73,8 +64,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('users.show',compact('user'))->with('user',$user);
+        $mahasiswa = Mahasiswa::find($id);
+        return view('mahasiswa.show',compact('mahasiswa'))->with('mahasiswa',$mahasiswa);
     }
 
     /**
@@ -85,8 +76,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', compact('user'));
+        $mahasiswa = Mahasiswa::find($id);
+        return view('mahasiswa.edit', compact('mahasiswa'));
     }
 
     /**
@@ -100,30 +91,20 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email'.$id,
-            'password' => 'required|same:confirm-password',
-            'is_admin' => 'required',
             'nim' => 'required',
             'jeniskelamin' => 'required',
             'ttl' => 'required',
             'alamat' => 'required',
             'angkatan' => 'required',
-            'nohp' => 'required',
         ]);
 
         $input = $request->all();
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
-        }
-        else {
-            $input = array_except($input,array('password'));
-        }
 
-        $user = User::find($id);
-        $user->update($input);
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->update($input);
 
-        return redirect()->route('users.index')
-            ->with('success','User updated');
+        return redirect()->route('mahasiswa.index')
+            ->with('success','mahasiswa updated');
     }
 
     /**
@@ -134,11 +115,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-            ->with('success', 'User Deleted');
+        Mahasiswa::find($id)->delete();
+        return redirect()->route('mahasiswa.index')
+            ->with('success', 'mahasiswa Deleted');
     }
-
-
-
 }

@@ -59,10 +59,8 @@ class UserController extends BaseController
      */
     public function update(Request $request, User $user)
     {
-        // dd($request->name);
         // $input = $request->all();
         $user = $request->user();
-        // dd($input);
 
         // $validator = Validator::make($input, [
         //     'name' => 'required',
@@ -89,7 +87,6 @@ class UserController extends BaseController
         $user->angkatan = $request->angkatan;
         $user->nohp = $request->nohp;
         $user->save();
-        // dd($user);
         return $this->sendResponse(new UserResource($user), 'User updated successfully.');
     }
 

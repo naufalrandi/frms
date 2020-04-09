@@ -23,8 +23,8 @@ Route::middleware('auth:api')->group( function () {
     Route::get('dosens', 'API\DosenController@index');
     // Route::resource('profile', 'UserController');
     Route::get('profile', 'API\UserController@show');
-    Route::put('profile/update', 'API\UserController@update');
-    // Route::patch('profile/update', 'API\UserController@update');
+    // Route::put('profile/update', 'API\UserController@update');
+    Route::patch('profile/update', 'API\UserController@update');
     Route::get('alumni', 'API\AlumniController@index');
     Route::get('semester', 'API\SemesterController@index');
     Route::get('matakuliah', 'API\MatakuliahController@index');

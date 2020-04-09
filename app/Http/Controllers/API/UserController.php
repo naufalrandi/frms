@@ -62,21 +62,21 @@ class UserController extends BaseController
         // $input = $request->all();
         $user = $request->user();
 
-        // $validator = Validator::make($input, [
-        //     'name' => 'required',
-        //     'email' => 'required|email|unique:users,email'.$user,
-        //     'password' => 'required|same:confirm-password',
-        //     'nim' => 'required',
-        //     'jeniskelamin' => 'required',
-        //     'ttl' => 'required',
-        //     'alamat' => 'required',
-        //     'angkatan' => 'required',
-        //     'nohp' => 'required',
-        // ]);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required',
+            'nim' => 'required',
+            'jeniskelamin' => 'required',
+            'ttl' => 'required',
+            'alamat' => 'required',
+            'angkatan' => 'required',
+            'nohp' => 'required',
+        ]);
 
-        // if($validator->fails()){
-        //     return $this->sendError('Validation Error.', $validator->errors());
-        // }
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
 
         $user->name = $request->name;
         $user->email = $request->email;

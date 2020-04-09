@@ -59,7 +59,6 @@ class UserController extends BaseController
      */
     public function update(Request $request, User $user)
     {
-        // $input = $request->all();
         $user = $request->user();
 
         $validator = Validator::make($request->all(), [

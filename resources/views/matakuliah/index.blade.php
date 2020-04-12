@@ -52,7 +52,8 @@
                     <tr>
                       <th>No</th>
                       <th>Kode</th>
-                      <th>Mata Kuliah Wajib</th>
+                      <th>Mata Kuliah </th>
+                      <th>Wajib / Minat </th>
                       <th>Jumlah SKS</th>
                       <th>Semester</th>
                       <th>Prasyarat</th>
@@ -67,6 +68,7 @@
                       </td>
                       <td>{{ $matakuliah->kode }}</td>
                       <td>{{ $matakuliah->matkulwajib }}</td>
+                      <td>{{ $matakuliah->minat }}</td>
                       <td>{{ $matakuliah->sks }}</td>
                       <td>{{ $matakuliah->semester->name }}</td>
                       <td>{{ $matakuliah->prasyarat }}</td>

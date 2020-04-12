@@ -14,6 +14,13 @@ class Filemateri extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'file' => $this->file,
+            'matakuliah' => new Matakuliah($this->matakuliah),
+            'created_at' => $this->created_at->format('d/m/Y'),
+            'updated_at' => $this->updated_at->format('d/m/Y'),
+        ];
     }
 }

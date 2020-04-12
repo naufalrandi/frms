@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Resources;
-
+use App\Http\Resources\Semester as SemesterResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Matakuliah extends JsonResource
@@ -18,10 +18,11 @@ class Matakuliah extends JsonResource
             'id' => $this->id,
             'kode' => $this->kode,
             'matkulwajib' => $this->matkulwajib,
+            'semester' => new SemesterResource($this->semester),
+            'sifat' => $this->minat,
             'sks' => $this->sks,
             'prasyarat' => $this->prasyarat,
             'cosyarat' => $this->cosyarat,
-            'semester_id' => $this->semester_id,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
         ];

@@ -17,9 +17,9 @@ class AlumniController extends BaseController
      */
     public function index()
     {
-        $alumni = Alumni::paginate();
+        $alumni = Alumni::orderBy('tahun', 'ASC')->get();
         return response()->json($alumni, 200);
-        //return $this->sendResponse(AlumniResource::collection($alumni), 'Dosen retrieved successfully.');
+        // return $this->sendResponse(AlumniResource::collection($alumni), 'Dosen retrieved successfully.');
     }
 
     /**

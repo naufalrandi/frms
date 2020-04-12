@@ -17,8 +17,9 @@ class MatakuliahController extends BaseController
      */
     public function index()
     {
-        $matakuliah = Matakuliah::paginate();
-        return response()->json($matakuliah, 200);
+        $matakuliah = Matakuliah::orderBy('matkulwajib', 'ASC')->orderBy('semester_id', 'ASC')->get();
+        // return response()->json($matakuliah, 200);
+        return $this->sendResponse(MatakuliahResource::collection($matakuliah), 'matakuliah retrieved successfully.');
     }
 
     /**

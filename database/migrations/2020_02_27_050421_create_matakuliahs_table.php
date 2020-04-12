@@ -17,6 +17,7 @@ class CreateMatakuliahsTable extends Migration
             $table->bigIncrements('id');
             $table->string('kode');
             $table->string('matkulwajib');
+            $table->string('minat');
             $table->integer('sks');
             $table->string('prasyarat')->nullable();
             $table->string('cosyarat')->nullable();

@@ -48,8 +48,13 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Mata Kuliah Wajib:</strong>
+                            <strong>Mata Kuliah :</strong>
                             <input type="text" name="matkulwajib" class="form-control" placeholder="Mata Kuliah wajib" required>
+                        </div>
+                    </div><div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Wajib / minat:</strong>
+                            <input type="text" name="minat" class="form-control" placeholder="Wajib atau Minat, Jika minat tulis bidang minat" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

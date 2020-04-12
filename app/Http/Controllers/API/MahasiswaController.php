@@ -15,8 +15,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = Mahasiswa::paginate();
+        $mahasiswa = Mahasiswa::orderBy('nim', 'ASC')->get();
         return response()->json($mahasiswa, 200);
+
     }
 
     /**

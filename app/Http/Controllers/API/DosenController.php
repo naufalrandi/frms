@@ -17,8 +17,9 @@ class DosenController extends BaseController
      */
     public function index()
     {
-        $dosen = Dosen::paginate();
-        return response()->json($dosen, 200);
+        $dosen = Dosen::orderBy('name', 'ASC')->get();
+
+        return $this->sendResponse(DosenResource::collection($dosen), 'Dosens retrieved successfully.');
     }
 
     /**

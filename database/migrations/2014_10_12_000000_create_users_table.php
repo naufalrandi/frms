@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->text('alamat')->nullable();
             $table->string('angkatan')->nullable();
             $table->bigInteger('nohp')->nullable();
+            $table->longText('fcm_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

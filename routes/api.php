@@ -23,10 +23,11 @@ use function GuzzleHttp\json_encode;
 //     return $request->user();
 // });
 
-// Route::get('notif', function () {
-//     $user = User::find(1);
-//     FacadesNotification::send($user, new event);
-// });
+Route::get('notif', function () {
+    $user = User::find(1)->notify(new event);
+    // $user->notify(new event);
+    return response()->json($user, 200);
+});
 
 Route::post('register', 'API\RegisterController@register');
 Route::post('login', 'API\RegisterController@login');

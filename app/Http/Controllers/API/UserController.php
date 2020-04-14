@@ -99,4 +99,8 @@ class UserController extends BaseController
     {
         //
     }
+    public function routeNotificationForFcm()
+    {
+        return $this->fcm_token;
+    }
 }

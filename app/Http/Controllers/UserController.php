@@ -139,6 +139,10 @@ class UserController extends Controller
             ->with('success', 'User Deleted');
     }
 
+    public function routeNotificationForFcm()
+    {
+        return $this->fcm_token;
+    }
 
 
 }

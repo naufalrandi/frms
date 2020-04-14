@@ -1165,20 +1165,20 @@
         },
         {
             "name": "kawankoding/laravel-fcm",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawankoding/laravel-fcm.git",
-                "reference": "ab38c7a932aa3e7a41bf87d3aa23554dfc02d264"
+                "reference": "c4f703b4f36bb572644db6dacab521a5e5dc678f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawankoding/laravel-fcm/zipball/ab38c7a932aa3e7a41bf87d3aa23554dfc02d264",
-                "reference": "ab38c7a932aa3e7a41bf87d3aa23554dfc02d264",
+                "url": "https://api.github.com/repos/kawankoding/laravel-fcm/zipball/c4f703b4f36bb572644db6dacab521a5e5dc678f",
+                "reference": "c4f703b4f36bb572644db6dacab521a5e5dc678f",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^5.1|^6.0",
+                "illuminate/support": "^5.1|^6.0|^7.0",
                 "php": "^5.6|^7.0"
             },
             "type": "library",
@@ -1208,7 +1208,7 @@
                 }
             ],
             "description": "A package to send Firebase notification cross Laravel Application",
-            "time": "2020-02-29T10:03:48+00:00"
+            "time": "2020-04-13T22:50:25+00:00"
         },
         {
             "name": "kreait/clock",

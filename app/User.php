@@ -19,8 +19,13 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name', 'email', 'password','is_admin','nim', 'jeniskelamin',
-        'ttl','alamat','angkatan','nohp',
+        'ttl','alamat','angkatan','nohp', 'fcm_token'
     ];
+
+    public function routeNotificationForFcm()
+    {
+        return $this->fcm_token;
+    }
 
 
     /**

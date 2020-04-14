@@ -13,6 +13,7 @@
       <li class="{{ request()->is('/matakuliah') ? 'active' : '' }}"><a class="nav-link" href="{{ route('matakuliah.index') }}"><i class="fa fa-book-reader"></i> <span>Mata Kuliah</span></a></li>
       <li class="{{ request()->is('/filemateri') ? 'active' : '' }}"><a class="nav-link" href="{{ route('filemateri.index') }}"><i class="fa fa-book"></i> <span>File Materi</span></a></li>
       <li class="{{ request()->is('/event') ? 'active' : '' }}"><a class="nav-link" href="{{ route('event.index') }}"><i class="fa fa-book"></i> <span>Event</span></a></li>
+      <li class="{{ request()->is('/journal') ? 'active' : '' }}"><a class="nav-link" href="{{ route('journal.index') }}"><i class="fa fa-book"></i> <span>Jurnal</span></a></li>
       <li class="menu-header">Data</li>
       <li class="{{ request()->is('/alumni') ? 'active' : '' }}"><a class="nav-link" href="{{ route('alumni.index') }}"><i class="fa fa-graduation-cap"></i> <span>Alumni</span></a></li>
       <li class="{{ request()->is('/dosen') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dosens.index') }}"><i class="fa fa-address-card"></i> <span>Dosen</span></a></li>

@@ -28,6 +28,7 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::resource('alumni', 'AlumniController');
     Route::resource('aspirasi', 'AspirasiController');
     Route::resource('semester', 'SemesterController');
+    Route::resource('journal', 'JournalController');
     Route::resource('matakuliah', 'MatakuliahController');
     Route::resource('mahasiswa', 'MahasiswaController');
     Route::resource('filemateri', 'FilemateriController', [

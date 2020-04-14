@@ -57,6 +57,30 @@
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/forms-advanced-forms.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBZQCP8GYcGuIDdCtUvuWVZhm7CGyT3jrQ",
+    authDomain: "mafarmasi-bd23d.firebaseapp.com",
+    databaseURL: "https://mafarmasi-bd23d.firebaseio.com",
+    projectId: "mafarmasi-bd23d",
+    storageBucket: "mafarmasi-bd23d.appspot.com",
+    messagingSenderId: "1618519495",
+    appId: "1:1618519495:web:f9abecd4cda8876405a5e2",
+    measurementId: "G-F8PVSBPGKX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 @stack('javascript')
 </body>
 </html>

@@ -8,6 +8,7 @@ use App\Http\Resources\User as UserResource;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends BaseController
 {
@@ -63,9 +64,9 @@ class UserController extends BaseController
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required',
-            'nim' => 'required',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'password' => 'required|password:api',
+            'nim' => 'required|unique:users,nim,'.$user->id,
             'jeniskelamin' => 'required',
             'ttl' => 'required',
             'alamat' => 'required',
@@ -76,16 +77,24 @@ class UserController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
+        if (!empty($user->password)) {
+            $user->password = bcrypt($request->password);
+        }
+        else {
+            $user = array_except($user,array('password'));
+        }
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        // $user->password = bcrypt($request->password);
         $user->nim = $request->nim;
         $user->jeniskelamin = $request->jeniskelamin;
         $user->ttl = $request->ttl;
         $user->angkatan = $request->angkatan;
         $user->nohp = $request->nohp;
         $user->save();
+
+
         return $this->sendResponse(new UserResource($user), 'User updated successfully.');
     }
 

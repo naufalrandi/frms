@@ -65,7 +65,7 @@ class UserController extends BaseController
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id,
-            'password' => 'required|password:api',
+            'password' => 'password:api',
             'nim' => 'required|unique:users,nim,'.$user->id,
             'jeniskelamin' => 'required',
             'ttl' => 'required',
@@ -77,23 +77,32 @@ class UserController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-        if (!empty($user->password)) {
-            $user->password = bcrypt($request->password);
+        // if (!empty($user->password)) {
+        //     $user->password = bcrypt($request->password);
+        // }
+        // else {
+        //     $user = array_except($user,array('password'));
+        // }
+
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // // $user->password = bcrypt($request->password);
+        // $user->nim = $request->nim;
+        // $user->jeniskelamin = $request->jeniskelamin;
+        // $user->ttl = $request->ttl;
+        // $user->angkatan = $request->angkatan;
+        // $user->nohp = $request->nohp;
+        // $user->save();
+
+        $input = $request->all();
+        if (!empty($input['password'])) {
+            $input['password'] = bcrypt($input['password']);
         }
         else {
-            $user = array_except($user,array('password'));
+            $input = array_except($input,array('password'));
         }
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        // $user->password = bcrypt($request->password);
-        $user->nim = $request->nim;
-        $user->jeniskelamin = $request->jeniskelamin;
-        $user->ttl = $request->ttl;
-        $user->angkatan = $request->angkatan;
-        $user->nohp = $request->nohp;
-        $user->save();
-
+        $user->update($input);
 
         return $this->sendResponse(new UserResource($user), 'User updated successfully.');
     }

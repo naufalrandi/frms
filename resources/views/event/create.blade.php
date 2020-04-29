@@ -2,8 +2,6 @@
 
 
 @section('content')
-
-
 <section class="section">
     <div class="section-header">
       <div class="section-header-back">
@@ -44,26 +42,24 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                            <strong>Nama File:</strong>
+                            <input type="text" name="name" class="form-control" placeholder="neme" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Tempat:</strong>
-                            <input type="text" name="tempat" class="form-control" placeholder="Tempat" required>
+                            <strong> Link File:</strong>
+                                {!! Form::text('file', null, array('placeholder' => 'Link File','class' => 'form-control')) !!}
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Tanggal:</strong>
-                            <input type="date" class="form-control datetimepicker" name="date">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Waktu:</strong>
-                            <input type="time" class="form-control datetimepicker" name="time">
+                            <strong>Mata Kuliah:</strong>
+                            <select class="form-control" name="matkul_id" >
+                                @foreach ($matakuliah as $matakuliah)
+                                    <option value="{{ $matakuliah->id }}">{{ $matakuliah->matkulwajib }}</option>
+                                @endforeach
+                              </select>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

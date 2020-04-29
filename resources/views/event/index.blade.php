@@ -34,17 +34,6 @@
                 <h4>All Event</h4>
               </div>
               <div class="card-body">
-                {{-- <div class="float-right">
-                  <form action="{{ route('users.search') }}" method="GET">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search" name="search" value="{{ old('search') }}">
-                      <div class="input-group-append">
-                        <button class="btn btn-primary" value="search"><i class="fas fa-search"></i></button>
-                      </div>
-                    </div>
-                  </form>
-                </div> --}}
-
                 <div class="clearfix mb-3"></div>
 
                 <div class="table-responsive">
@@ -52,9 +41,8 @@
                     <tr>
                       <th>No</th>
                       <th>Name</th>
-                      <th>Tempat</th>
-                      <th>Tanggal</th>
-                      <th>Waktu</th>
+                      <th>Link File</th>
+                      <th>Mata kuliah</th>
                       <th>Options</th>
                     </tr>
 
@@ -64,15 +52,10 @@
                         {{ ++$i }}
                       </td>
                       <td>{{ $event->name }}</td>
-                      <td>{{ $event->tempat }}</td>
-                      <td>{{ $event->date }}</td>
-                      <td>{{ $event->time }}</td>
+                      <td><a href="{{ $event->file }}">{{ $event->file }} </a></td>
+                      <td>{{ $event->matakuliah->matkulwajib }}</td>
                     <td>
                         <div class="table-links">
-                            <a class="btn btn-info btn-sm" href="{{ route('event.show',$event->id) }}">Show</a>
-                            <div class="bullet"></div>
-                            <a class="btn btn-primary btn-sm" href="{{ route('event.edit',$event->id) }}">Edit</a>
-                            <div class="bullet"></div>
                             <form action="{{ route('event.destroy', $event->id)}}" method="post">
                               @csrf
                               @method('DELETE')
@@ -94,4 +77,5 @@
         </div>
       </div>
     </section>
+
 @endsection

@@ -30,4 +30,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+        'api_key' => 'AIzaSyBZQCP8GYcGuIDdCtUvuWVZhm7CGyT3jrQ', // Only used for JS integration
+        'auth_domain' => 'mafarmasi-bd23d.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://mafarmasi-bd23d.firebaseio.com',
+        'storage_bucket' => 'mafarmasi-bd23d.appspot.com', // Only used for JS integration
+    ],
+
+    'fcm' => [
+        'key' => env('FCM_SECRET_KEY')
+    ],
+
 ];

@@ -34,6 +34,7 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::resource('filemateri', 'FilemateriController', [
         'only' => ['index', 'create', 'store','destroy']
     ]);
+    Route::view('event/form', 'event.form')->name('event.form');
     Route::resource('event', 'EventController');
     // Route::get('users/search', 'UserController@search');
 

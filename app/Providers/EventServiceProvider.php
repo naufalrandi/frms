@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'Illuminate\Auth\Events\Verified' => [
             'App\Listeners\LogVerifiedUser',
         ],
+        'Illuminate\Notifications\Events\NotificationSent' => [
+            'App\Listeners\LogNotification',
+        ],
     ];
 
     /**

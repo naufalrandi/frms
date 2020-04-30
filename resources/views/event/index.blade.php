@@ -40,9 +40,10 @@
                   <table class="table table-striped" id="event">
                     <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Link File</th>
-                      <th>Mata kuliah</th>
+                      <th>Nama Acara </th>
+                      <th>Tempat</th>
+                      <th>Tanggal</th>
+                      <th>Waktu</th>
                       <th>Options</th>
                     </tr>
 
@@ -52,8 +53,10 @@
                         {{ ++$i }}
                       </td>
                       <td>{{ $event->name }}</td>
-                      <td><a href="{{ $event->file }}">{{ $event->file }} </a></td>
-                      <td>{{ $event->matakuliah->matkulwajib }}</td>
+                      <td>{{ $event->tempat }}</td>
+                      <td>{{ $event->date }}</td>
+                      <td>{{ $event->time }}</td>
+
                     <td>
                         <div class="table-links">
                             <form action="{{ route('event.destroy', $event->id)}}" method="post">

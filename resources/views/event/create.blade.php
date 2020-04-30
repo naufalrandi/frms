@@ -39,32 +39,34 @@
             <div class="card-body">
                 <form action="{{ route('event.store') }}" method="POST">
                     @csrf
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Nama File:</strong>
-                            <input type="text" name="name" class="form-control" placeholder="neme" required>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Name:</strong>
+                                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong> Link File:</strong>
-                                {!! Form::text('file', null, array('placeholder' => 'Link File','class' => 'form-control')) !!}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Tempat:</strong>
+                                <input type="text" name="tempat" class="form-control" placeholder="Tempat" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Mata Kuliah:</strong>
-                            <select class="form-control" name="matkul_id" >
-                                @foreach ($matakuliah as $matakuliah)
-                                    <option value="{{ $matakuliah->id }}">{{ $matakuliah->matkulwajib }}</option>
-                                @endforeach
-                              </select>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Tanggal:</strong>
+                                {!! Form::date('date', null, array('placeholder' => 'date','class' => 'form-control')) !!}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Waktu:</strong>
+                                {!! Form::time('time', null, array('placeholder' => 'time','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                 </div>
             </form>
             </div>
